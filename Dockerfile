@@ -14,7 +14,7 @@ RUN apt-get update \
 
 RUN pip3 install --upgrade pip
 
-RUN pip3 install -- upgrade setuptools
+RUN pip3 install --upgrade setuptools
 
 RUN pip3 install oauthlib~=3.1.0 msal~=1.4.3 backports.zoneinfo \
 dateutils \
@@ -37,14 +37,6 @@ nltk \
 cherrypy \
 SolrClient
 
-
-#RUN python3.8 -m venv /opt/venv3.8
-
-
-#ENTRYPOINT ["/bin/bash", "-c", "source /opt/venv3.8/bin/activate && pip install --upgrade pip"]
-
-#RUN source /opt/venv3.8/bin/activate
-#RUN pip install --upgrade pip
 
 RUN adduser utente --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
 RUN echo "utente:units" | chpasswd
