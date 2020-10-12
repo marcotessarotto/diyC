@@ -15,14 +15,21 @@ this fork is used on a virtual machine which has a 4.4.74 Linux Kernel configure
 also included in this repo is the ubuntu 18.04 archive extracted from a Docker image.
 
 ## Download minimal Ubuntu 18.04 image:
-docker pull ubuntu:18.04
+docker build .
 
-docker run -ti ubuntu:18.04 /bin/bash
+// lookup docker image just created:
+docker image ls 
+
+docker run -it <image_id>
+
+// docker pull ubuntu:18.04
+
+// docker run -ti ubuntu:18.04 /bin/bash
 
 docker ps -a 
-(lookup docker container just created -> xxyyzz)
+(lookup docker id of container just created -> container_id)
 
-docker export xxyyzz > ubuntu1804.tar
+docker export container_id > ubuntu1804.tar
 
 ## Download additional deb packages for Python 3.8
 https://stackoverflow.com/a/45489718/974287
