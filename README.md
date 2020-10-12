@@ -15,15 +15,28 @@ this fork is used on a virtual machine which has a 4.4.74 Linux Kernel configure
 also included in this repo is the ubuntu 18.04 archive extracted from a Docker image.
 
 ## Download minimal Ubuntu 18.04 image:
+docker pull ubuntu:18.04
+docker run -ti ubuntu:18.04 /bin/bash
+docker ps -a 
+(lookup docker container just created)
+docker export 8411d8b32343 > ubuntu1804.tar
 
-
-## Download deb packages for Python 3.8
+## Download additional deb packages for Python 3.8
 https://stackoverflow.com/a/45489718/974287
+
+from another ubuntu 18.04 virtual machine:
 
 export $PACKAGES="python3.8"
 apt-get download $(apt-cache depends --recurse --no-recommends --no-suggests \
   --no-conflicts --no-breaks --no-replaces --no-enhances \
   --no-pre-depends ${PACKAGES} | grep "^\w" | grep -v -e "libpcre3" -e "libssl1.1")
+
+## installation and first run
+make setup
+make
+mkdir images/ubuntu
+tar -xf ubuntu1804.tar -C images/ubuntu/
+./diyc my1 ubuntu bash
 
 
 
