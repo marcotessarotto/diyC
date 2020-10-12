@@ -21,15 +21,19 @@ docker build .
 
 docker image ls 
 
+
 // run container from image:
 
 docker run -it <image_id>
 
 
+// lookup docker id of container just created -> container_id
+
 docker ps -a 
-(lookup docker id of container just created -> container_id)
+
 
 docker export container_id > ubuntu1804.tar
+
 
 ## Download additional deb packages for Python 3.8
 https://stackoverflow.com/a/45489718/974287
