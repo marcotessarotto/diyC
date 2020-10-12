@@ -14,7 +14,10 @@ containers are related.
 this fork is used on a virtual machine which has a 4.4.74 Linux Kernel configured without CLONE_NEWPID and CLONE_NEWUTS.
 
 Also included in this repo is Dockerfile for exporting an ubuntu 18.04 file system with support for python3.8 and pip3
- 
+
+# Python3 packages
+modify Dockerfile if you need additional python3 packages (using pip)
+
 
 ## Download minimal Ubuntu 18.04 image:
 docker build .
