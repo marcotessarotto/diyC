@@ -14,6 +14,19 @@ containers are related.
 this fork is used on a virtual machine which has a 4.4.74 Linux Kernel configured without CLONE_NEWPID and CLONE_NEWUTS.
 also included in this repo is the ubuntu 18.04 archive extracted from a Docker image.
 
+## Download minimal Ubuntu 18.04 image:
+
+
+## Download deb packages for Python 3.8
+https://stackoverflow.com/a/45489718/974287
+
+export $PACKAGES="python3.8"
+apt-get download $(apt-cache depends --recurse --no-recommends --no-suggests \
+  --no-conflicts --no-breaks --no-replaces --no-enhances \
+  --no-pre-depends ${PACKAGES} | grep "^\w" | grep -v -e "libpcre3" -e "libssl1.1")
+
+
+
 ## Documentation
 
 [http://wvi.cz/diyC/](http://wvi.cz/diyC/) or pure markdown
