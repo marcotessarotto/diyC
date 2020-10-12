@@ -59,7 +59,6 @@ mkdir images/ubuntu
 
 tar -xf ubuntu1804.tar -C images/ubuntu/
 
-(copy *.deb packages in images/ubuntu/root/deb)
 
 ./diyc my1 ubuntu /bin/bash
 
