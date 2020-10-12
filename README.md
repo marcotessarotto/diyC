@@ -11,7 +11,8 @@ containers are related.
 
 ## Modified to run on a vm with Linux Kernel 4.4.74
 
-
+this fork is used on a virtual machine which has a 4.4.74 Linux Kernel configured without CLONE_NEWPID and CLONE_NEWUTS.
+also included in this repo is the ubuntu 18.04 archive extracted from a Docker image.
 
 ## Documentation
 
