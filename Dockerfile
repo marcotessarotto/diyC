@@ -10,6 +10,7 @@ RUN apt-get update \
     ca-certificates \
     openssl \
     make \
+    net-tools \
     sudo
 
 RUN pip3 install --upgrade pip
