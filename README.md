@@ -34,6 +34,8 @@ docker ps -a
 
 docker export container_id > ubuntu1804.tar
 
+gzip ubuntu1804.tar
+
 
 ## Download additional deb packages for Python 3.8
 https://stackoverflow.com/a/45489718/974287
