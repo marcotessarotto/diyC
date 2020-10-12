@@ -18,13 +18,13 @@ also included in this repo is the ubuntu 18.04 archive extracted from a Docker i
 docker build .
 
 // lookup docker image just created:
+
 docker image ls 
+
+// run container from image:
 
 docker run -it <image_id>
 
-// docker pull ubuntu:18.04
-
-// docker run -ti ubuntu:18.04 /bin/bash
 
 docker ps -a 
 (lookup docker id of container just created -> container_id)
