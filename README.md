@@ -9,6 +9,10 @@ creation of a container from an image to clarify how images and
 containers are related.
 
 
+## Modified to run on a vm with Linux Kernel 4.4.74
+
+
+
 ## Documentation
 
 [http://wvi.cz/diyC/](http://wvi.cz/diyC/) or pure markdown
