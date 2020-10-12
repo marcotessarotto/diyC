@@ -1,4 +1,4 @@
-# diyC for host with Linux Kernel 4.4.74, guest Ubuntu 18.04 with python3.8 and pip3
+# diyC modified for a vm host using Linux Kernel 4.4.74 (without CLONE_NEWPID and CLONE_NEWUTS support) and running a container based on Ubuntu 18.04 with python3.8, pip3 and a specific list of python packages
 
 A simple educational Linux container runtime.
 
@@ -19,10 +19,10 @@ Also included in this repo is Dockerfile for exporting an ubuntu 18.04 file syst
 modify Dockerfile if you need additional python3 packages (using pip)
 
 
-## Download minimal Ubuntu 18.04 image:
+## Download minimal Ubuntu 18.04 image
 docker build .
 
-// lookup docker image just created:
+// lookup id of docker image just created (image_id)
 
 docker image ls 
 
@@ -32,12 +32,12 @@ docker image ls
 docker run -it <image_id>
 
 
-// lookup docker id of container just created -> container_id
+// lookup id of container just created (container_id)
 
 docker ps -a 
 
 
-docker export container_id > ubuntu1804.tar
+docker export <container_id> > ubuntu1804.tar
 
 gzip ubuntu1804.tar
 
