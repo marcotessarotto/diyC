@@ -42,16 +42,6 @@ docker export container_id > ubuntu1804.tar
 gzip ubuntu1804.tar
 
 
-## Download additional deb packages for Python 3.8
-https://stackoverflow.com/a/45489718/974287
-
-from another ubuntu 18.04 virtual machine:
-
-export PACKAGES="python3.8 python3.8-minimal libpython3.8-minimal libpython3.8-stdlib"
-
-apt-get download $(apt-cache depends --recurse --no-recommends --no-suggests \
-  --no-conflicts --no-breaks --no-replaces --no-enhances \
-  --no-pre-depends ${PACKAGES} | grep "^\w" | grep -v -e "libpcre3" -e "libssl1.1" -e "i386")
 
 ## installation and first run
 make setup
@@ -60,12 +50,12 @@ make
 
 mkdir images/ubuntu
 
-tar -xf ubuntu1804.tar -C images/ubuntu/
+tar -xcf ubuntu1804.tar.gz -C images/ubuntu/
 
 
 ./diyc my1 ubuntu /bin/bash
 
-
+pip3 list
 
 ## Documentation
 
