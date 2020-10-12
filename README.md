@@ -20,9 +20,9 @@ docker pull ubuntu:18.04
 docker run -ti ubuntu:18.04 /bin/bash
 
 docker ps -a 
-(lookup docker container just created)
+(lookup docker container just created -> xxyyzz)
 
-docker export 8411d8b32343 > ubuntu1804.tar
+docker export xxyyzz > ubuntu1804.tar
 
 ## Download additional deb packages for Python 3.8
 https://stackoverflow.com/a/45489718/974287
@@ -44,7 +44,9 @@ mkdir images/ubuntu
 
 tar -xf ubuntu1804.tar -C images/ubuntu/
 
-./diyc my1 ubuntu bash
+(copy *.deb packages in images/ubuntu/root/deb)
+
+./diyc my1 ubuntu /bin/bash
 
 
 
