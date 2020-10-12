@@ -29,11 +29,11 @@ https://stackoverflow.com/a/45489718/974287
 
 from another ubuntu 18.04 virtual machine:
 
-export $PACKAGES="python3.8"
+export $PACKAGES="python3.8 python3.8-minimal"
 
 apt-get download $(apt-cache depends --recurse --no-recommends --no-suggests \
   --no-conflicts --no-breaks --no-replaces --no-enhances \
-  --no-pre-depends ${PACKAGES} | grep "^\w" | grep -v -e "libpcre3" -e "libssl1.1")
+  --no-pre-depends ${PACKAGES} | grep "^\w" | grep -v -e "libpcre3" -e "libssl1.1" -e "i386)
 
 ## installation and first run
 make setup
