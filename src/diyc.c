@@ -432,7 +432,9 @@ main(int argc, char *argv[])
     int long_index = 0;
     extern char *optarg;
     unsigned int memory = 0;
-    int flags =  SIGCHLD | CLONE_NEWNS | CLONE_NEWPID | CLONE_NEWUTS;
+    int flags =  SIGCHLD | CLONE_NEWNS; 
+    // this vm has a 4.4.74 Linux Kernel configured without CLONE_NEWPID and CLONE_NEWUTS
+    // | CLONE_NEWPID | CLONE_NEWUTS;
     container_t c;
     pid_t pid = -1;
     struct clone_stack stack;
